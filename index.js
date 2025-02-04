@@ -16,18 +16,18 @@ class SortedList {
   }
 
   get(pos) {
-    if (pos > this.length - 1) throw new Error("OutOfBounds");
-    if (this.length) return this.items[pos];
+    if (pos > this.length - 1 || pos < 0) throw new Error("OutOfBounds");
+    return this.items[pos];
   }
 
   max() {
     if (!this.length) throw new Error("EmptySortedList");
-    return Math.max(...this.items);
+    return Math.max(...this.items); //or because the array is ordered: //return this.items[this.length - 1];
   }
 
   min() {
     if (!this.length) throw new Error("EmptySortedList");
-    return Math.min(...this.items);
+    return Math.min(...this.items); //or because the array is ordered: //return this.items[0];
   }
 
   sum() {
